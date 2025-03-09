@@ -42,7 +42,7 @@ namespace AccountingAndAnalysis1.AppData
             },
             new PieSeries
             {
-                Title = "Безнал",
+                Title = "Безналичные",
                 Values = new ChartValues<decimal> { totalCard },
                 DataLabels = true
             }
