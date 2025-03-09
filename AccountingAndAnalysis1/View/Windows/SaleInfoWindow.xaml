@@ -36,7 +36,7 @@
             <TextBlock Text="{Binding SaleType.Name}"/>
         </GroupBox>
         <GroupBox Grid.Row="2" Grid.Column="2" Header="Дата">
-            <TextBlock Text="{Binding CashRegister.Number}"/>
+            <TextBlock Text="{Binding Date}"/>
         </GroupBox>
         <GroupBox Grid.Row="4" Grid.Column="2" Header="Стоимость">
             <TextBlock Text="{Binding TotalCost}"/>

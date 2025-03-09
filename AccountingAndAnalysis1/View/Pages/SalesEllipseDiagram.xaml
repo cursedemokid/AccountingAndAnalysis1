@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AccountingAndAnalysis1.View.Pages"
         mc:Ignorable="d"
-        Title="Анализ всех продаж по способу оплаты" Height="450" Width="800">
+        Title="Анализ всех продаж по способу оплаты" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <lvc:PieChart Series="{Binding SeriesCollection}" LegendLocation="Right">
             <lvc:PieChart.DataTooltip>
