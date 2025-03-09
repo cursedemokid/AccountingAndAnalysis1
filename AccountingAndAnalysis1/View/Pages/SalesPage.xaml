@@ -1,0 +1,58 @@
+﻿<Page x:Class="AccountingAndAnalysis1.View.Pages.SalesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AccountingAndAnalysis1.View.Pages"
+      mc:Ignorable="d" 
+       d:DesignHeight="620.05" d:DesignWidth="1260"
+  Title="Страница продаж">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <GroupBox Header="По магазину">
+                <ComboBox Name="FilterByStoreCmb" SelectionChanged="FilterByStoreCmb_SelectionChanged"
+                          SelectedValuePath="Name" DisplayMemberPath="Name" SelectedIndex="0"/>
+            </GroupBox>
+            <GroupBox Header="По дате" Grid.Column="2">
+                <DatePicker Name="FilterByDateDp" SelectedDateChanged="FilterByStoreCmb_SelectionChanged"/>
+            </GroupBox>
+            <Button Name="DiagramShow" Grid.Column="8" Content="Анализ продаж" Click="DiagramShow_Click"/>
+            <Button Grid.Column="10" Content="Подробная информация" Click="Button_Click"/>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <ListView Name="SaleLv">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding Date}"/>
+                        <GridViewColumn Header="Магазин" DisplayMemberBinding="{Binding CashRegister.Store.Name}"/>
+                        <GridViewColumn Header="Итоговая стоимость" DisplayMemberBinding="{Binding TotalCost}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+
+    </Grid>
+</Page>
