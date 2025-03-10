@@ -46,7 +46,7 @@
             <ListView Name="SaleLv">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding Date}"/>
+                        <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding Date, StringFormat={}{0:dd.MM.yyyy}}"/>
                         <GridViewColumn Header="Магазин" DisplayMemberBinding="{Binding CashRegister.Store.Name}"/>
                         <GridViewColumn Header="Итоговая стоимость" DisplayMemberBinding="{Binding TotalCost}"/>
                     </GridView>

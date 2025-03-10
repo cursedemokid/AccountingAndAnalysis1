@@ -38,13 +38,15 @@ namespace AccountingAndAnalysis1.AppData
             {
                 Title = "Наличные",
                 Values = new ChartValues<decimal> { totalCash },
-                DataLabels = true
+                DataLabels = true,
+                LabelPoint = point => $"{point.Y:F2} руб."
             },
             new PieSeries
             {
                 Title = "Безналичные",
                 Values = new ChartValues<decimal> { totalCard },
-                DataLabels = true
+                DataLabels = true,
+                 LabelPoint = point => $"{point.Y:F2} руб."
             }
         };
 
