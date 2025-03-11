@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AccountingAndAnalysis1
+namespace AccountingAndAnalysis1.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AccountingAndSalesAnalysisEntities : DbContext
+    public partial class AccountingAndSalesAnalysisEntities3 : DbContext
     {
-        public AccountingAndSalesAnalysisEntities()
-            : base("name=AccountingAndSalesAnalysisEntities")
+        public AccountingAndSalesAnalysisEntities3()
+            : base("name=AccountingAndSalesAnalysisEntities3")
         {
         }
     

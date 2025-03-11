@@ -1,4 +1,6 @@
-﻿using LiveCharts;
+﻿using AccountingAndAnalysis1.Models;
+
+using LiveCharts;
 using LiveCharts.Wpf;
 
 using System;

@@ -7,26 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AccountingAndAnalysis1
+namespace AccountingAndAnalysis1.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class Store
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public Store()
         {
-            this.SaleProduct = new HashSet<SaleProduct>();
+            this.CashRegister = new HashSet<CashRegister>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public decimal Cost { get; set; }
-        public int CategoryId { get; set; }
+        public int CompanyId { get; set; }
+        public string Address { get; set; }
     
-        public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SaleProduct> SaleProduct { get; set; }
+        public virtual ICollection<CashRegister> CashRegister { get; set; }
+        public virtual Company Company { get; set; }
     }
 }

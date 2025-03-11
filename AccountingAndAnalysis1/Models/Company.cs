@@ -7,36 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AccountingAndAnalysis1
+namespace AccountingAndAnalysis1.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Employee
+    public partial class Company
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Employee()
+        public Company()
         {
-            this.Sale = new HashSet<Sale>();
+            this.Store = new HashSet<Store>();
         }
     
         public int Id { get; set; }
-        public string Surname { get; set; }
-        public string FirstName { get; set; }
-        public string MiddleName { get; set; }
-        public string FullName
-        {
-            get
-            {
-                return $"{Surname} {FirstName} {MiddleName}";
-            }
-        }
-        public string Phone { get; set; }
-        public string Email { get; set; }
-        public int PositionId { get; set; }
+        public string Name { get; set; }
     
-        public virtual Position Position { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sale> Sale { get; set; }
+        public virtual ICollection<Store> Store { get; set; }
     }
 }

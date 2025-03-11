@@ -7,23 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AccountingAndAnalysis1
+namespace AccountingAndAnalysis1.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class CashRegisterType
+    public partial class SaleProduct
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CashRegisterType()
-        {
-            this.CashRegister = new HashSet<CashRegister>();
-        }
+        public int SaleId { get; set; }
+        public int ProductId { get; set; }
+        public int Quantity { get; set; }
+        public decimal TotalCost { get; set; }
     
-        public int Id { get; set; }
-        public string Name { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CashRegister> CashRegister { get; set; }
+        public virtual Product Product { get; set; }
+        public virtual Sale Sale { get; set; }
     }
 }

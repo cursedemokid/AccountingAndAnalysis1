@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AccountingAndAnalysis1.Models;
+
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,6 +15,6 @@ namespace AccountingAndAnalysis1
     /// </summary>
     public partial class App : Application
     {
-        public static AccountingAndSalesAnalysisEntities context = new AccountingAndSalesAnalysisEntities();
+        public static AccountingAndSalesAnalysisEntities3 context = new AccountingAndSalesAnalysisEntities3();
     }
 }

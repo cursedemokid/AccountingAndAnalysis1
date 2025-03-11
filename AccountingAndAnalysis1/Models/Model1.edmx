@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище AccountingAndSalesAnalysisModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище AccountingAndSalesAnalysisModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CashRegister">
           <Key>
             <PropertyRef Name="Id" />
@@ -46,6 +46,8 @@
           <Property Name="Phone" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="PositionId" Type="int" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="20" />
+          <Property Name="Password" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Position">
           <Key>
@@ -273,7 +275,8 @@
             <End Role="Store" EntitySet="Store" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AccountingAndSalesAnalysisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -324,6 +327,8 @@
           <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PositionId" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Position" Relationship="Self.FK_Employee_Position" FromRole="Employee" ToRole="Position" />
           <NavigationProperty Name="Sale" Relationship="Self.FK_Sale_Employee" FromRole="Employee" ToRole="Sale" />
         </EntityType>
@@ -350,7 +355,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SaleTypeId" Type="Int32" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="TotalCost" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
@@ -512,7 +517,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="AccountingAndSalesAnalysisEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="AccountingAndSalesAnalysisEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CashRegister" EntityType="Self.CashRegister" />
           <EntitySet Name="CashRegisterType" EntityType="Self.CashRegisterType" />
           <EntitySet Name="Category" EntityType="Self.Category" />
@@ -570,7 +575,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище AccountingAndSalesAnalysisModelContainer" CdmEntityContainer="AccountingAndSalesAnalysisEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище AccountingAndSalesAnalysisModelContainer" CdmEntityContainer="AccountingAndSalesAnalysisEntities3">
           <EntitySetMapping Name="CashRegister">
             <EntityTypeMapping TypeName="AccountingAndSalesAnalysisModel.CashRegister">
               <MappingFragment StoreEntitySet="CashRegister">
@@ -615,6 +620,8 @@
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

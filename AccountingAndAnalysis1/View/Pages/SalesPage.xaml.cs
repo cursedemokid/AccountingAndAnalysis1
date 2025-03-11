@@ -1,4 +1,5 @@
 ﻿using AccountingAndAnalysis1.AppData;
+using AccountingAndAnalysis1.Models;
 using AccountingAndAnalysis1.View.Windows;
 
 using System;
