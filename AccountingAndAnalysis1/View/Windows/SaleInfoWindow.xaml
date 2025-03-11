@@ -39,7 +39,7 @@
             <TextBlock Text="{Binding Date, StringFormat={}{0:dd.MM.yyyy}}"/>
         </GroupBox>
         <GroupBox Grid.Row="4" Grid.Column="2" Header="Стоимость">
-            <TextBlock Text="{Binding TotalCost}"/>
+            <TextBlock Text="{Binding TotalCost, StringFormat={}{0:F2} руб.}"/>
         </GroupBox>
         <Grid Grid.Row="6" Grid.ColumnSpan="5">
 
@@ -64,7 +64,7 @@
                             <TextBlock Grid.Row="4" Text="Всего:"/>
                             <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding Product.Name}"/>
                             <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding Quantity}"/>
-                            <TextBlock Grid.Row="4" Grid.Column="2" Text="{Binding TotalCost}"/>
+                            <TextBlock Grid.Row="4" Grid.Column="2" Text="{Binding TotalCost, StringFormat={}{0:F2} руб.}"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

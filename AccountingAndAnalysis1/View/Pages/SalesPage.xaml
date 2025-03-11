@@ -35,7 +35,6 @@
             <GroupBox Header="По дате" Grid.Column="2">
                 <DatePicker Name="FilterByDateDp" SelectedDateChanged="FilterByStoreCmb_SelectionChanged"/>
             </GroupBox>
-            <Button Name="DiagramShow" Grid.Column="8" Content="Анализ продаж" Click="DiagramShow_Click"/>
             <Button Grid.Column="10" Content="Подробная информация" Click="Button_Click"/>
         </Grid>
 
@@ -48,7 +47,11 @@
                     <GridView>
                         <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding Date, StringFormat={}{0:dd.MM.yyyy}}"/>
                         <GridViewColumn Header="Магазин" DisplayMemberBinding="{Binding CashRegister.Store.Name}"/>
-                        <GridViewColumn Header="Итоговая стоимость" DisplayMemberBinding="{Binding TotalCost}"/>
+                        <GridViewColumn Header="Итоговая стоимость">
+                            <GridViewColumn.DisplayMemberBinding>
+                                <Binding Path="TotalCost" StringFormat="{}{0} руб."/>
+                            </GridViewColumn.DisplayMemberBinding>
+                        </GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>
