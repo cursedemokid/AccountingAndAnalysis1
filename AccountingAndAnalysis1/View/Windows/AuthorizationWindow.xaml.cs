@@ -1,4 +1,5 @@
-﻿using AccountingAndAnalysis1.AppData;
+﻿using ProjectSecurity;
+using AccountingAndAnalysis1.AppData;
 using AccountingAndAnalysis1.Models;
 
 using System;
@@ -22,7 +23,7 @@ namespace AccountingAndAnalysis1.View.Windows
     /// </summary>
     public partial class AuthorizationWindow : Window
     {
-        List<Employee> _employees = App.context.Employee.ToList();
+
         public AuthorizationWindow()
         {
             InitializeComponent();
@@ -45,8 +46,8 @@ namespace AccountingAndAnalysis1.View.Windows
             else
             {
 
-                Employee employee = _employees.FirstOrDefault(em => em.Login == LoginTbx.Text && em.Password == PasswordPb.Password);
-                if (employee != null)
+                Employee employee = App.context.Employee.FirstOrDefault(em => em.Login == LoginTbx.Text);
+                if (employee != null && PasswordSecurity.Verify(PasswordPb.Password, employee.Password))
                 {
                     if (employee.PositionId != 2)
                     {
